@@ -124,8 +124,8 @@ class Target {
 
       //word
       else {
-        let target_x = windowWidth / 2 - words / 2.0 * (h_margin + target_size * 30) + c * (h_margin + target_size * 30) + 80;        // give it some margin from the left border
-        let target_y = (v_margin + target_size) * r + target_size / 2 + 900;
+        let target_x = windowWidth / 2 - words / 2.0 * (h_margin + target_size * 30) + c * (h_margin + target_size * 30) + 2.05 * PPCM;        // give it some margin from the left border
+        let target_y = (v_margin + target_size) * r + target_size / 2 + 23.4 * PPCM;
 
         let legendas_index = indexed_array[key][0];
         let target = new Target(target_x, target_y + 40, t_size, legendas.getString(legendas_index, 1), legendas.getNum(legendas_index, 0), null);

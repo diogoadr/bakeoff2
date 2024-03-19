@@ -391,8 +391,8 @@ function createTargets(target_size, horizontal_gap, vertical_gap, windowWidth, w
 
     //word
     else {
-      let target_x = (h_margin + target_size) * c / 1.2 + target_size / 2 + windowWidth / 3 + 85;        // give it some margin from the left border
-      let target_y = (v_margin + target_size) * r + target_size / 2 + 820;
+      let target_x = (h_margin + target_size) * c / 1.2 + target_size / 2 + windowWidth / 3 + 2.3 * PPCM;        // give it some margin from the left border
+      let target_y = (v_margin + target_size) * r + target_size / 2 + 21.5 * PPCM;
 
       let legendas_index = indexed_array[key][0];
       let target = new Target(target_x, target_y + 40, target_size, legendas.getString(legendas_index, 1), legendas.getNum(legendas_index, 0), null);
