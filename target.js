@@ -38,7 +38,7 @@ class Target {
   createSubMenusOrTargets(array, size, indexed_array) {
     var r = 0;
     var c = 0;
-    let t_size = target_size * PPCM;
+    let t_size = target_size * windowHeight / 28;
     let h_gap = horizontal_gap * PPCM - 80;
     let v_gap = vertical_gap * PPCM - 80;
     let h_margin = h_gap / (GRID_COLUMNS - 1);
@@ -99,7 +99,7 @@ class Target {
     print("words: ", words, " menus: ", menus);
 
     var angleIncrement = (2 * Math.PI) / menus;
-    var radius = target_size * 6.5;
+    var radius = windowWidth / 70;
     var loopCounter = 0;
 
     print("radius: ", radius, " angleIncrement: ", angleIncrement);
@@ -124,8 +124,8 @@ class Target {
 
       //word
       else {
-        let target_x = windowWidth / 2 - words / 2.0 * (h_margin + target_size * 30) + c * (h_margin + target_size * 30) + 2.05 * PPCM;        // give it some margin from the left border
-        let target_y = (v_margin + target_size) * r + target_size / 2 + 23.4 * PPCM;
+        let target_x = t_size * c + windowWidth / 2.0 - words / 2.0 * t_size + t_size / 2;        // give it some margin from the left border
+        let target_y = (v_margin + t_size) * r + t_size / 2 + windowHeight / 5 * 3.8;
 
         let legendas_index = indexed_array[key][0];
         let target = new Target(target_x, target_y + 40, t_size, legendas.getString(legendas_index, 1), legendas.getNum(legendas_index, 0), null);

@@ -366,7 +366,7 @@ function createTargets(target_size, horizontal_gap, vertical_gap, windowWidth, w
   print("words: ", words, " menus: ", menus);
 
   var angleIncrement = (2 * Math.PI) / menus;
-  var radius = target_size * 6.5 / PPCM
+  var radius = windowWidth / 70;
   var loopCounter = 0;
 
   print("radius: ", radius, " angleIncrement: ", angleIncrement);
@@ -391,8 +391,8 @@ function createTargets(target_size, horizontal_gap, vertical_gap, windowWidth, w
 
     //word
     else {
-      let target_x = (h_margin + target_size) * c / 1.2 + target_size / 2 + windowWidth / 3 + 2.3 * PPCM;        // give it some margin from the left border
-      let target_y = (v_margin + target_size) * r + target_size / 2 + 21.5 * PPCM;
+      let target_x = target_size * c + windowWidth / 2.0 - words / 2.0 * target_size + target_size / 2;        // give it some margin from the left border
+      let target_y = (v_margin + target_size) * r + target_size / 2 + windowHeight / 5 * 3.8;
 
       let legendas_index = indexed_array[key][0];
       let target = new Target(target_x, target_y + 40, target_size, legendas.getString(legendas_index, 1), legendas.getNum(legendas_index, 0), null);
@@ -449,7 +449,7 @@ function windowResized() {
 
     // Creates and positions the UI targets according to the white space defined above (in cm!)
     // 80 represent some margins around the display (e.g., for text)
-    createTargets(target_size * PPCM, horizontal_gap * PPCM - 80, vertical_gap * PPCM - 80, windowWidth, windowHeight);
+    createTargets(target_size * windowHeight / 28, horizontal_gap * PPCM - 80, vertical_gap * PPCM - 80, windowWidth, windowHeight);
 
     // Starts drawing targets immediately after we go fullscreen
     draw_targets = true;
